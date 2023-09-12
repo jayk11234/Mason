@@ -1,0 +1,33 @@
+<!doctype html>
+<head>
+	<title>Register-Mason</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='stylesheetOne.css') }}"> 
+	<link rel="stylesheet" href="{{ url_for('static', filename='stylesheetThree.css') }}"> 
+	
+</head>
+<body>
+<div id = 'buttonoutr'>
+	<h1> Sign up </h1>
+	<form method="post">
+	<label for="username"> 
+	<pre>Email		       <span id='acc'>Already have an account? <a href="{{url_for('auth.login')}}"><button type="button" id='signup' class='button'>Log in</button></a></span></pre>
+	</label>
+	<input name='username' id='username' required> <br>
+	<label>
+	<pre>Password				     <span>Show</span></pre>
+	</label for="password">
+	<input name='password' id='passwrd' type='password' required>
+	<br>
+	<div class = "center">
+    <input id ="signup" type="submit" value="Sign up" class='button'><br>
+	</div>
+	</form>
+	<hr>
+	<div class='center'>
+	<a><button id='google' type="button" class='button'>Sign up with Google</button><br>
+	</div>
+	<div class='center'>
+	<a><button id='facebook' type=button class='button'>Sign up with Facebook</button><br>
+	</div>
+</div>
+</body>

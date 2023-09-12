@@ -1,0 +1,29 @@
+<!DOCTYPE! html>
+<html>
+
+<head>
+<title> Mason </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheetOne.css') }}">
+</head>
+
+<body>
+
+    <div id = "buttonoutr">
+		 <h1 id='headingOne' > MASON QUIZES  </h1>
+		 <div class ="center">
+			<a href="startpage.html"> <button id='start' type = "button" class='button' >Get started </button></a> <br/>
+		 </div>
+		 <div class ="center">
+			 <button id='premade' type="button" class='button'>Pre-made quizes</button><br/>
+		 </div>
+		 <div class = "center">
+			<a href="{{url_for('auth.register')}}"> <button id ="login" type="button" class='button'>Login / SignUp </button> <br>
+		 </div>
+		 <div class="center">
+			 <button id='share' type ="button" class='button'>Share</button><br/>
+		</div> 
+	</div> 
+</body>
+</html>
+ 
+ 

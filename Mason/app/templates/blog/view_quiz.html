@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} {{ quizname }} {% endblock %}
+<link rel="stylesheet" href = "{{url_for('static',filename='stylehseetQuiz.css')}}">
+{% block content %}
+<form id="{{ quizname }}" method="post">
+{% for question in current_quiz %}
+<div class="ques">
+    <p> {{question['ques']}} </p>
+        <br>
+        {% set options = question['options'].split(',')%}
+        {% for i in range(0,4) %}
+            <input type="radio" id="{{options[i]}}" name="option{{i+1}}" class='option' value="{{options[i]}}">
+            <label>{{options[i]}}</label> <br>
+		{% endfor %}	   
+</div>
+{% endfor %}
+<input type="submit" value="Submit" onclick="show_result()">
+</form>
+{% endblock %}

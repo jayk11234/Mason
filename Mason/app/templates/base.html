@@ -1,0 +1,26 @@
+<!doctype html>
+<title> {% block title %} {% endblock %} - Mason</title>
+{% block links %} {% endblock %}
+<nav>
+    <div >
+        
+        <div id="icon_space">
+            {% if g.user %}
+            <button  id="user"> {{ g.user["username"] }}</button>
+            {% else %}
+            <button id="login">Log in</button>
+            {% endif %}
+        </div>
+        <div id="links"></div>
+    </div>
+</nav>
+
+<section class="content">
+    <header> 
+        {% block header %} {% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %} {% endblock %}
+</section>

@@ -1,0 +1,31 @@
+<!DOCTYPE! html>
+
+<html>
+<head>
+<title> Get Started </title>
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='stylesheetOne.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheetTwo.css') }}"> -->
+<link rel="stylesheet" href="..\..\static\stylesheetOne.css">
+<link rel="stylesheet" href="..\..\static\stylesheetTwo.css">
+<script src="script.js"></script>
+</head>
+<body>
+	
+		<div id ='middle'>
+		<form  method='post' id="quiz">	
+		
+			<textarea id='ques' name='ques' placeholder='Your question...'></textarea> <br>
+			<input type="text" name="option1" class='option' placeholder="Option 1" autocomplete='off'> <br>
+			<input type="text" name="option2" class='option' placeholder="Option 2" autocomplete='off'> <br>
+			<input type="text" name="option3" class='option' placeholder="Option 3" autocomplete='off'> <br>
+			<input type="text" name="option4" class='option' placeholder="Option 4" autocomplete='off'> <br>
+			</div>
+			<div id='left'>
+			<input type="submit" value='Save' class='button'id='save'>
+		</form>
+			<button id='add' class='button' onclick="createQues()">Add</button><br>
+			</div>
+			<br>
+	
+</body>
+</html>

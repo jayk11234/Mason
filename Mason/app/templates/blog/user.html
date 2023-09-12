@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} {{g.user['username']}} {% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{url_for('static',filename='stylesheetUser.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='stylesheetIcon.css')}}">
+<script src="{{url_for('static',filename='script.js')}}" type="text/javascript"></script>
+{% endblock %}
+{% block content %} 
+<div id="quiz-container"> 
+    <form method='get' action="{{url_for('blog.view_quiz')}}" id="quiznames"></form>
+    {% for quizname in g.quizes%}
+        <button class="quiz" form="quiznames" type="'submit" name='quizname' value="{{quizname['quizname']}}"> {{quizname['quizname']}}
+        </button>
+        <br>
+    {% endfor %}   
+    <button onclick="add_quiz()">Add quiz</button>
+</div>
+
+{% endblock %}   
