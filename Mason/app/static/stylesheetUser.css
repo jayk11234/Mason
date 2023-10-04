@@ -1,5 +1,61 @@
+body{
+    font-family: 'Martel', serif;
+    font-family: 'Roboto', sans-serif;
+}
 div#quiz-container{
-    display : flex;
-    flex-direction : column;
+    margin:50px;
+    padding:50px;
+    display :flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:rgb(155, 118, 190);
+    border-radius:40px;
+    
+}
+a{
+    display:block;
 
 }
+
+.btn {
+    padding: 10px;
+    border-style: none;
+    background-color:rgb(255, 255, 255);
+    border-radius:10px;
+    width:500px;
+    height:10vh;
+    text-align:center;
+    font-size:1.2em;
+
+}
+#submit-btn,#close-btn{
+    font-size:1.2em;
+    color:white;
+    background:black;
+    padding:10px;
+    height:10vh;
+    width:100px;
+    border-radius:10px;
+    border:none;
+    margin:5px;
+    box-sizing: border-box;
+
+}
+#close-btn{
+    width:50px;
+    font-size:1.3em;
+    text-align:center;
+
+}
+#quiz-name{
+    width:330px;
+    height:9vh;
+    border-radius:10px;
+    font-size:1.2em;
+    border:none;
+    padding:10px;
+    box-sizing: border-box;
+
+}
+
+
