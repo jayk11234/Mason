@@ -1,19 +1,45 @@
 {% extends 'base.html' %}
 {% block title %} {{ quizname }} {% endblock %}
-<link rel="stylesheet" href = "{{url_for('static',filename='stylehseetQuiz.css')}}">
+{% block links %}
+<link rel="stylesheet" href="{{url_for('static',filename='stylesheetQuiz.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='stylesheetIcon.css')}}">
+{% endblock %}
+
 {% block content %}
-<form id="{{ quizname }}" method="post">
+<div id="quiz-name"><p>{{ quizname }}</p>
+    <div id="update-delete">
+    <form method="post" action="{{url_for('blog.delete_quiz',username=g.user['username'],quizname=quizname)}}">
+        <button id='delete' type="submit" value="Delete" title="Delete Quiz"></button>
+    </form>
+    <a href="{{url_for('blog.update_quiz',username=g.user['username'],quizname=quizname)}}">
+        <button id="update" title="Update Quiz"></button>
+    </a>    
+    </div>
+</div>
+<form id="{{ quizname }}" method="post" >
+{% set ns = namespace(i=1) %}
+<div id="quiz-container">
 {% for question in current_quiz %}
 <div class="ques">
     <p> {{question['ques']}} </p>
-        <br>
         {% set options = question['options'].split(',')%}
-        {% for i in range(0,4) %}
-            <input type="radio" id="{{options[i]}}" name="option{{i+1}}" class='option' value="{{options[i]}}">
-            <label>{{options[i]}}</label> <br>
+        {% for j in range(0,4) %}
+            <label><input type="radio" id="option{{j+1}}" name="ques{{ns.i}}" class='option' value="{{options[j]}}">
+            
+            {{options[j]}}</label><br>
+
 		{% endfor %}	   
+    {%- set ns.i = ns.i+1  %}
 </div>
 {% endfor %}
-<input type="submit" value="Submit" onclick="show_result()">
+</div>
+<button id ='submit-btn' title="Submit Quiz">Submit</button>
 </form>
+<div id='hidden-box'>
+</div>
+
 {% endblock %}
+{% block scriptLinks %}
+<script src="{{url_for('static',filename='script2.js')}}" type="text/javascript"></script>
+{% endblock %}
+
